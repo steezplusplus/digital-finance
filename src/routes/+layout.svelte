@@ -7,11 +7,11 @@
 
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>
 <nav class="px-4">
-  <a href='/'>
+  <a href="/">
     <h1 class="text-3xl font-bold">Cloud Finance</h1>
   </a>
 </nav>
 
-<main class="px-4 space-y-2">
+<main class="space-y-2 px-4">
   {@render children()}
 </main>

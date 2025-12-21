@@ -1,21 +1,10 @@
 import type { PageServerLoad } from './$types';
 import { API_URL, API_KEY } from '$env/static/private';
 import { error } from '@sveltejs/kit';
-
-// TODO: Finish this type
-type CloudCostData = {
-  account: {};
-  meta: any;
-  period: {};
-  reservations: [];
-  spend: {};
-  savings: {};
-  tableConfig: {};
-  utilization: {};
-};
+import type { CloudCostDataType } from '$lib/types';
 
 // TODO: try/catch...
-const getCloudCostData = async (): Promise<CloudCostData> => {
+const getCloudCostData = async (): Promise<CloudCostDataType> => {
   const response = await fetch(API_URL, {
     headers: {
       Authorization: `Bearer ${API_KEY}`
