@@ -6,4 +6,12 @@
 </script>
 
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>
-{@render children()}
+<nav class="px-4">
+  <a href='/'>
+    <h1 class="text-3xl font-bold">Cloud Finance</h1>
+  </a>
+</nav>
+
+<main class="px-4 space-y-2">
+  {@render children()}
+</main>

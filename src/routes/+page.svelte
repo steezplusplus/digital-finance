@@ -4,7 +4,23 @@
   let { data }: { data: PageData } = $props();
 </script>
 
-<h2>Account</h2>
+<section class="border px-2 py-1">
+  <h2 class="text-lg font-semibold">Spend Overview</h2>
+</section>
+
+<section class="border px-2 py-1">
+  <h2 class="text-lg font-semibold">Savings</h2>
+</section>
+
+<section class="border px-2 py-1">
+  <h2 class="text-lg font-semibold">Utilization</h2>
+</section>
+
+<section class="border px-2 py-1">
+  <h2 class="text-lg font-semibold">Reservations</h2>
+</section>
+
+<!-- <h2>Account</h2>
 <pre>{JSON.stringify(data.account, null, 2)}</pre>
 <h2>Meta</h2>
 <pre>{JSON.stringify(data.meta, null, 2)}</pre>
@@ -19,4 +35,4 @@
 <h2>Table Config</h2>
 <pre>{JSON.stringify(data.tableConfig, null, 2)}</pre>
 <h2>Utilization</h2>
-<pre>{JSON.stringify(data.utilization, null, 2)}</pre>
+<pre>{JSON.stringify(data.utilization, null, 2)}</pre> -->
