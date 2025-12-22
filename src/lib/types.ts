@@ -11,12 +11,12 @@ export type UtilizationType = {
 
 // TODO: Finish this type
 export type CloudCostDataType = {
-  account: {};
-  meta: any;
-  period: {};
+  account: Record<string, unknown>;
+  meta: Record<string, unknown>;
+  period: Record<string, unknown>;
   reservations: [];
-  spend: {};
-  savings: {};
-  tableConfig: {};
+  spend: Record<string, unknown>;
+  savings: Record<string, unknown>;
+  tableConfig: Record<string, unknown>;
   utilization: UtilizationType;
 };
