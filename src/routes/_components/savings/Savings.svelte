@@ -5,6 +5,8 @@
 
   let { savings }: { savings: SavingsType } = $props();
   let { available, reshaping, anomalies } = $derived(savings);
+  // TODO: Break down into a component for each card. Maybe make a card component. 
+  // TODO: Test this.
 </script>
 
 <section>
@@ -12,7 +14,7 @@
 
   <div class="grid gap-2 md:grid-cols-2 lg:grid-cols-3">
     <div class="border px-2 py-1">
-      <h3 class="font-medium">Available Savings</h3>
+      <h3 class="font-semibold">Available Savings</h3>
       <h4>{available.description}</h4>
       <p>{formatCurrency(available.amount, available.currency)} per month</p>
       <p>{formatCurrency(available.yearlyEquivalent, available.currency)} per year</p>
@@ -21,7 +23,7 @@
 
     <div class="border px-2 py-1">
       <div class="flex items-center">
-        <h3 class="font-medium">Reshaping Savings</h3>
+        <h3 class="font-semibold">Reshaping Savings</h3>
         <span class="ml-auto">
           <Tooltip description={reshaping.tooltip} />
         </span>
@@ -34,7 +36,7 @@
 
     <div class="border px-2 py-1 md:col-span-2 lg:col-span-1">
       <div class="flex items-center">
-        <h3 class="font-medium">Anomalies</h3>
+        <h3 class="font-semibold">Anomalies</h3>
         <span class="ml-auto">
           <Tooltip description={anomalies.tooltip} />
         </span>
