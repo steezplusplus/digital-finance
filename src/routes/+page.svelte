@@ -1,8 +1,8 @@
 <script lang="ts">
   import type { PageData } from './$types';
 
-  import Utilization from '$lib/components/utilization/Utilization.svelte';
-  import Savings from '$lib/components/savings/Savings.svelte';
+  import Utilization from './_components/utilization/Utilization.svelte';
+  import Savings from './_components/savings/Savings.svelte';
 
   let { data }: { data: PageData } = $props();
 </script>
