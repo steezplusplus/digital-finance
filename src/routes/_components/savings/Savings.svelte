@@ -3,7 +3,8 @@
   import { formatCurrency } from '$lib/utils/formatters';
   import Tooltip from '$lib/components/tooltip/Tooltip.svelte';
 
-  let { data }: { data: SavingsType } = $props();
+  let { savings }: { savings: SavingsType } = $props();
+  let { available, reshaping, anomalies } = $derived(savings);
 </script>
 
 <section class="border px-2 py-1">
@@ -12,41 +13,41 @@
   <div class="grid gap-2 md:grid-cols-2 lg:grid-cols-3">
     <div class="border px-2 py-1">
       <h3 class="font-medium">Available Savings</h3>
-      <h4>{data.available.description}</h4>
-      <p>{formatCurrency(data.available.amount, data.available.currency)} per month</p>
-      <p>{formatCurrency(data.available.yearlyEquivalent, data.available.currency)} per year</p>
-      <a href={data.available.actionUrl}>{data.available.actionLabel}</a>
+      <h4>{available.description}</h4>
+      <p>{formatCurrency(available.amount, available.currency)} per month</p>
+      <p>{formatCurrency(available.yearlyEquivalent, available.currency)} per year</p>
+      <a href={available.actionUrl}>{available.actionLabel}</a>
     </div>
 
     <div class="border px-2 py-1">
       <div class="flex items-center">
         <h3 class="font-medium">Reshaping Savings</h3>
         <span class="ml-auto">
-          <Tooltip description={data.reshaping.tooltip} />
+          <Tooltip description={reshaping.tooltip} />
         </span>
       </div>
 
-      <h4>{data.reshaping.description}</h4>
-      <p>{formatCurrency(data.reshaping.amount, data.reshaping.currency)} per month</p>
-      <p>{formatCurrency(data.reshaping.yearlyEquivalent, data.reshaping.currency)} per year</p>
+      <h4>{reshaping.description}</h4>
+      <p>{formatCurrency(reshaping.amount, reshaping.currency)} per month</p>
+      <p>{formatCurrency(reshaping.yearlyEquivalent, reshaping.currency)} per year</p>
     </div>
 
     <div class="border px-2 py-1 md:col-span-2 lg:col-span-1">
       <div class="flex items-center">
         <h3 class="font-medium">Anomalies</h3>
         <span class="ml-auto">
-          <Tooltip description={data.reshaping.tooltip} />
+          <Tooltip description={anomalies.tooltip} />
         </span>
       </div>
 
-      <h4>{data.anomalies.description}</h4>
-      <p>{data.anomalies.count} Detected issues</p>
+      <h4>{anomalies.description}</h4>
+      <p>{anomalies.count} Detected issues</p>
       <p>
-        {formatCurrency(data.anomalies.estimatedCostImpact, data.anomalies.currency)} estimated impact
+        {formatCurrency(anomalies.estimatedCostImpact, anomalies.currency)} estimated impact
       </p>
-      <p>{data.anomalies.severity.high} High</p>
-      <p>{data.anomalies.severity.medium} Medium</p>
-      <p>{data.anomalies.severity.high} Low</p>
+      <p>{anomalies.severity.high} High</p>
+      <p>{anomalies.severity.medium} Medium</p>
+      <p>{anomalies.severity.low} Low</p>
     </div>
   </div>
 </section>

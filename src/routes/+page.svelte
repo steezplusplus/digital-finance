@@ -11,7 +11,7 @@
   <h2 class="text-lg font-semibold">Spend Overview</h2>
 </section>
 
-<Savings data={data.savings} />
+<Savings savings={data.savings} />
 
 <Utilization data={data.utilization} />
 
