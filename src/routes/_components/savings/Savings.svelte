@@ -7,7 +7,7 @@
   let { available, reshaping, anomalies } = $derived(savings);
 </script>
 
-<section class="border px-2 py-1">
+<section>
   <h2 class="text-lg font-semibold">Savings</h2>
 
   <div class="grid gap-2 md:grid-cols-2 lg:grid-cols-3">
