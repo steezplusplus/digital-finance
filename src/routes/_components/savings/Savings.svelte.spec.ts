@@ -38,7 +38,7 @@ describe('Savings.svelte', () => {
   it('should render the heading', async () => {
     render(Savings, {
       props: {
-        data: mockSavingsData
+        savings: mockSavingsData
       }
     });
 

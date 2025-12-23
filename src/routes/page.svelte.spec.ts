@@ -2,7 +2,7 @@ import { page } from 'vitest/browser';
 import { describe, expect, it } from 'vitest';
 import { render } from 'vitest-browser-svelte';
 import Page from './+page.svelte';
-import type { CloudCostDataType, UtilizationType } from '$lib/types';
+import type { CloudCostDataType, SavingsType, UtilizationType } from '$lib/types';
 
 const mockUtilizationData: UtilizationType = {
   organizationName: 'North AI',
@@ -15,13 +15,43 @@ const mockUtilizationData: UtilizationType = {
   tooltip: 'Current commitment utilization rate'
 };
 
+const mockSavingsData: SavingsType = {
+  available: {
+    amount: 1537,
+    currency: 'USD',
+    yearlyEquivalent: 18440,
+    description: 'Potential monthly savings from optimization recommendations',
+    actionLabel: 'Save Now',
+    actionUrl: '/savings/available'
+  },
+  reshaping: {
+    amount: 1,
+    currency: 'USD',
+    yearlyEquivalent: 10,
+    description: 'Savings from rightsizing recommendations',
+    tooltip: 'Reshaping identifies over-provisioned resources'
+  },
+  anomalies: {
+    count: 8,
+    estimatedCostImpact: 3330,
+    currency: 'USD',
+    description: 'Unusual spending patterns detected',
+    severity: {
+      high: 2,
+      medium: 4,
+      low: 2
+    },
+    tooltip: 'Estimated cost change from detected anomalies'
+  }
+};
+
 const mockCloudCostData: CloudCostDataType = {
   account: {},
   meta: {},
   period: {},
   reservations: [],
   spend: {},
-  savings: {},
+  savings: mockSavingsData,
   tableConfig: {},
   utilization: mockUtilizationData
 };
