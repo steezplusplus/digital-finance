@@ -15,7 +15,7 @@
       <h4>{data.available.description}</h4>
       <p>{formatCurrency(data.available.amount, data.available.currency)} per month</p>
       <p>{formatCurrency(data.available.yearlyEquivalent, data.available.currency)} per year</p>
-      <p>TODO: available.actionLabel and available.actionUrl</p>
+      <a href={data.available.actionUrl}>{data.available.actionLabel}</a>
     </div>
 
     <div class="border px-2 py-1">
