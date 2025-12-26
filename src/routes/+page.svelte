@@ -13,8 +13,8 @@
   <h2 class="text-lg font-semibold">Spend Overview</h2>
 </section>
 
-<Savings savings={savings} />
+<Savings {savings} />
 
-<Utilization utilization={utilization} />
+<Utilization {utilization} />
 
-<Reservations reservations={reservations} />
+<Reservations {reservations} />
