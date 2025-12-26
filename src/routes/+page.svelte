@@ -15,6 +15,6 @@
 
 <Savings savings={savings} />
 
-<Utilization data={utilization} />
+<Utilization utilization={utilization} />
 
 <Reservations reservations={reservations} />

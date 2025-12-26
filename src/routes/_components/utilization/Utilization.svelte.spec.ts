@@ -19,7 +19,7 @@ describe('Utilization.svelte', () => {
   it('should render utilization heading', async () => {
     render(Utilization, {
       props: {
-        data: mockUtilizationData
+        utilization: mockUtilizationData
       }
     });
 
@@ -30,7 +30,7 @@ describe('Utilization.svelte', () => {
   it('should display organization name', async () => {
     render(Utilization, {
       props: {
-        data: mockUtilizationData
+        utilization: mockUtilizationData
       }
     });
 
@@ -41,7 +41,7 @@ describe('Utilization.svelte', () => {
   it('should display month-to-date savings', async () => {
     render(Utilization, {
       props: {
-        data: mockUtilizationData
+        utilization: mockUtilizationData
       }
     });
 
@@ -52,7 +52,7 @@ describe('Utilization.svelte', () => {
   it('should display utilization percentage', async () => {
     render(Utilization, {
       props: {
-        data: mockUtilizationData
+        utilization: mockUtilizationData
       }
     });
 
@@ -63,7 +63,7 @@ describe('Utilization.svelte', () => {
   it('should display target percentage', async () => {
     render(Utilization, {
       props: {
-        data: mockUtilizationData
+        utilization: mockUtilizationData
       }
     });
 
@@ -74,7 +74,7 @@ describe('Utilization.svelte', () => {
   it('should display status', async () => {
     render(Utilization, {
       props: {
-        data: mockUtilizationData
+        utilization: mockUtilizationData
       }
     });
 
