@@ -10,7 +10,7 @@
 </script>
 
 <section class="border px-2 py-1">
-  <h2 class="text-lg font-semibold">Utilization</h2>
+  <h2 class="text-xl font-semibold">Utilization</h2>
   <div class="flex items-center gap-1">
     <div
       class="h-3 w-3 rounded-full border"

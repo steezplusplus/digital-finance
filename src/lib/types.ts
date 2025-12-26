@@ -50,14 +50,7 @@ export type UtilizationType = {
 export type ReservationType = {
   id: string;
   type: string;
-  category:
-    | 'Machine Learning'
-    | 'Compute'
-    | 'Database'
-    | 'Cache'
-    | 'Serverless'
-    | 'Analytics'
-    | 'Containers';
+  category: string;
   instance: string;
   endDate: string;
   startDate: string;

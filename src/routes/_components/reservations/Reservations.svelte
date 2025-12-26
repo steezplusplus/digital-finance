@@ -21,7 +21,7 @@
 </script>
 
 <section class="flex flex-col gap-2 border px-2 py-1">
-  <h2 class="text-lg font-semibold">Reservations</h2>
+  <h2 class="text-xl font-semibold">Reservations</h2>
 
   <table class="w-full">
     <thead>

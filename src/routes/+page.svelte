@@ -10,7 +10,7 @@
 </script>
 
 <section class="border px-2 py-1">
-  <h2 class="text-lg font-semibold">Spend Overview</h2>
+  <h2 class="text-xl font-semibold">Spend Overview</h2>
 </section>
 
 <Savings {savings} />
