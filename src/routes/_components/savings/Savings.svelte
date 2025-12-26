@@ -54,7 +54,9 @@
 
       <h4 class="font-light">{anomalies.description}</h4>
       <p><span class="text-4xl">{anomalies.count}</span> Detected issues</p>
-      <p class="font-light">{anomalies.severity.high} High, {anomalies.severity.medium} Medium, {anomalies.severity.low} Low</p>
+      <p class="font-light">
+        {anomalies.severity.high} High, {anomalies.severity.medium} Medium, {anomalies.severity.low} Low
+      </p>
       <p class="font-light">
         {formatCurrency(anomalies.estimatedCostImpact, anomalies.currency)} estimated impact
       </p>

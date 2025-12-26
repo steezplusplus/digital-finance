@@ -4,7 +4,9 @@
 
   let { utilization }: { utilization: UtilizationType } = $props();
 
-  const formattedSavings = $derived(formatCurrency(utilization.monthToDateSavings, utilization.currency));
+  const formattedSavings = $derived(
+    formatCurrency(utilization.monthToDateSavings, utilization.currency)
+  );
 </script>
 
 <section class="border px-2 py-1">
@@ -21,7 +23,9 @@
     <p>Month-to-Date Savings: {formattedSavings}</p>
 
     <label for="percentage">Current utilization: {utilization.percentage}%</label>
-    <progress id="percentage" max="100" value={utilization.percentage}>{utilization.percentage}</progress>
+    <progress id="percentage" max="100" value={utilization.percentage}
+      >{utilization.percentage}</progress
+    >
 
     <label for="target">Target utilization: {utilization.target}%</label>
     <progress id="target" max="100" value={utilization.target}>{utilization.target}</progress>
