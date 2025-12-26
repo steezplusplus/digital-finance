@@ -1,4 +1,6 @@
 <script lang="ts">
+  // TODO: Managed vs unmanaged UI
+  // TODO: Unit test
   import type { ReservationType } from '$lib/types';
   import { formatCurrency, formatDate } from '$lib/utils/formatters';
 
@@ -39,7 +41,7 @@
           <td>
             {formatCurrency(reservation.costPerHour, reservation.currency)}
           </td>
-          <td>
+          <td class="{reservation.mtdSavings > 0 ? 'text-green-400' : 'text-red-400'}">
             {formatCurrency(reservation.mtdSavings, reservation.currency)}
           </td>
         </tr>
