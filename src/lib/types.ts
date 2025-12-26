@@ -47,12 +47,27 @@ export type UtilizationType = {
   tooltip: string;
 };
 
+export type ReservationType = {
+  id: string;
+  type: string;
+  category: 'Machine Learning' | 'Compute' | 'Database' | 'Cache' | 'Serverless' | 'Analytics' | 'Containers';
+  instance: string;
+  endDate: string;
+  startDate: string;
+  costPerHour: number;
+  mtdSavings: number;
+  currency: string;
+  managedByNorth: boolean;
+  status: 'active' | 'inactive' | 'expired';
+  utilizationPercent: number;
+}
+
 // TODO: Finish this type
 export type CloudCostDataType = {
   account: Record<string, unknown>;
   meta: Record<string, unknown>;
   period: Record<string, unknown>;
-  reservations: [];
+  reservations: ReservationType[];
   spend: Record<string, unknown>;
   savings: SavingsType;
   tableConfig: Record<string, unknown>;
