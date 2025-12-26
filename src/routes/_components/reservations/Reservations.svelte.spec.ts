@@ -52,13 +52,7 @@ describe('Reservations.svelte', () => {
       }
     });
 
-    const headers = [
-      'TYPE',
-      'INSTANCE',
-      'END DATE',
-      'COST PER HOUR',
-      'MTD SAVINGS'
-    ];
+    const headers = ['TYPE', 'INSTANCE', 'END DATE', 'COST PER HOUR', 'MTD SAVINGS'];
 
     for (const header of headers) {
       const th = page.getByText(header);
