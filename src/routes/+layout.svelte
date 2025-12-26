@@ -8,7 +8,7 @@
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>
 <nav class="px-4">
   <a href="/">
-    <h1 class="text-3xl font-bold">Cloud Finance</h1>
+    <h1 class="text-4xl font-bold">Cloud Finance</h1>
   </a>
 </nav>
 
