@@ -1,6 +1,8 @@
 <script lang="ts">
-  import Utilization from '$lib/components/Utilization.svelte';
   import type { PageData } from './$types';
+
+  import Utilization from './_components/utilization/Utilization.svelte';
+  import Savings from './_components/savings/Savings.svelte';
 
   let { data }: { data: PageData } = $props();
 </script>
@@ -9,9 +11,7 @@
   <h2 class="text-lg font-semibold">Spend Overview</h2>
 </section>
 
-<section class="border px-2 py-1">
-  <h2 class="text-lg font-semibold">Savings</h2>
-</section>
+<Savings savings={data.savings} />
 
 <Utilization data={data.utilization} />
 
