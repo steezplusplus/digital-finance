@@ -50,7 +50,14 @@ export type UtilizationType = {
 export type ReservationType = {
   id: string;
   type: string;
-  category: 'Machine Learning' | 'Compute' | 'Database' | 'Cache' | 'Serverless' | 'Analytics' | 'Containers';
+  category:
+    | 'Machine Learning'
+    | 'Compute'
+    | 'Database'
+    | 'Cache'
+    | 'Serverless'
+    | 'Analytics'
+    | 'Containers';
   instance: string;
   endDate: string;
   startDate: string;
@@ -60,7 +67,7 @@ export type ReservationType = {
   managedByNorth: boolean;
   status: 'active' | 'inactive' | 'expired';
   utilizationPercent: number;
-}
+};
 
 // TODO: Finish this type
 export type CloudCostDataType = {
