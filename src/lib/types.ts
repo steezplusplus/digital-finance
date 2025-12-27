@@ -84,7 +84,6 @@ export interface TimeSeriesSpendType {
   projected: number;
 }
 
-
 export interface SpendType {
   projected: ProjectedSpendType;
   current: CurrentSpendType;
