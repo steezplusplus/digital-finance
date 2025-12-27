@@ -58,15 +58,16 @@
     </select>
   </div>
 
-  <div>Current Spend: {formatCurrency(spend.current.amount, spend.current.currency)}</div>
+  <div class="flex items-center gap-x-4 text-sm font-light">
+    <p>Current Spend: {formatCurrency(spend.current.amount, spend.current.currency)}</p>
 
-  <div>
-    Projected Spend: {formatCurrency(spend.projected.amount, spend.projected.currency)}
-    <span class="text-xs {spend.projected.trend === 'up' ? 'text-green-400' : 'text-red-400'}">
-      ({spend.projected.percentageChange > 0 ? '+' : '-'}{spend.projected.percentageChange}%)
-    </span>
+    <p>
+      Projected Spend: {formatCurrency(spend.projected.amount, spend.projected.currency)}
+      <span class={spend.projected.trend === 'up' ? 'text-green-700' : 'text-red-700'}>
+        ({spend.projected.percentageChange > 0 ? '+' : '-'}{spend.projected.percentageChange}%)
+      </span>
+    </p>
   </div>
 
-  <div id="chart" style="height: 25rem"></div>
-  <!-- <pre>{JSON.stringify(spend, null, 4)}</pre> -->
+  <div id="chart" style="width: 100%; height: 30rem;"></div>
 </section>
