@@ -4,14 +4,13 @@
   import Utilization from './_components/utilization/Utilization.svelte';
   import Savings from './_components/savings/Savings.svelte';
   import Reservations from './_components/reservations/Reservations.svelte';
+  import Spend from './_components/spend/Spend.svelte';
 
   let { data }: { data: PageData } = $props();
-  const { savings, utilization, reservations } = $derived(data);
+  const { savings, utilization, reservations, spend } = $derived(data);
 </script>
 
-<section class="border px-2 py-1">
-  <h2 class="text-xl font-semibold">Spend Overview</h2>
-</section>
+<Spend {spend} />
 
 <Savings {savings} />
 

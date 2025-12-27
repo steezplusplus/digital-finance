@@ -46,7 +46,7 @@
           <td>
             {formatCurrency(row.costPerHour, row.currency)}
           </td>
-          <td class={row.mtdSavings > 0 ? 'text-green-400' : 'text-red-400'}>
+          <td class={row.mtdSavings > 0 ? 'text-green-700' : 'text-red-700'}>
             {formatCurrency(row.mtdSavings, row.currency)}
           </td>
         </tr>
