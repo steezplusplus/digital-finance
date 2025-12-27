@@ -62,13 +62,42 @@ export type ReservationType = {
   utilizationPercent: number;
 };
 
+// Spend Types
+export interface ProjectedSpendType {
+  amount: number;
+  currency: string;
+  percentageChange: number;
+  trend: 'up' | 'down';
+  comparedTo: string;
+}
+
+export interface CurrentSpendType {
+  amount: number;
+  currency: string;
+  period: string;
+  periodLabel: string;
+}
+
+export interface TimeSeriesSpendType {
+  date: string;
+  amount: number;
+  projected: number;
+}
+
+
+export interface SpendType {
+  projected: ProjectedSpendType;
+  current: CurrentSpendType;
+  timeSeries: TimeSeriesSpendType[];
+}
+
 // TODO: Finish this type
 export type CloudCostDataType = {
   account: Record<string, unknown>;
   meta: Record<string, unknown>;
   period: Record<string, unknown>;
   reservations: ReservationType[];
-  spend: Record<string, unknown>;
+  spend: SpendType;
   savings: SavingsType;
   tableConfig: Record<string, unknown>;
   utilization: UtilizationType;
