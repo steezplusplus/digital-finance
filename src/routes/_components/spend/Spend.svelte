@@ -1,7 +1,9 @@
 <script lang="ts">
-  import type { SpendType } from '$lib/types';
   import * as echarts from 'echarts';
   import { onMount } from 'svelte';
+
+  import type { SpendType } from '$lib/types';
+  import { formatCurrency, formatDate } from '$lib/utils/formatters';
 
   let { spend }: { spend: SpendType } = $props();
 
@@ -11,18 +13,29 @@
     lineChart.setOption({
       tooltip: { trigger: 'axis' },
       legend: { data: ['Actual', 'Projected'] },
-      xAxis: { type: 'category', data: spend.timeSeries.map((d) => d.date) },
-      yAxis: { type: 'value' },
+      xAxis: {
+        type: 'category',
+        data: spend.timeSeries.map((d) => d.date),
+        axisLabel: {
+          formatter: (value: string) => formatDate(value)
+        }
+      },
+      yAxis: {
+        type: 'value',
+        axisLabel: {
+          formatter: (value: number) => formatCurrency(value, spend.current.currency)
+        }
+      },
       series: [
         {
           name: 'Actual',
           type: 'line',
-          data: spend.timeSeries.map((d) => d.amount),
+          data: spend.timeSeries.map((d) => d.amount)
         },
         {
           name: 'Projected',
           type: 'line',
-          data: spend.timeSeries.map((d) => d.projected),
+          data: spend.timeSeries.map((d) => d.projected)
         }
       ]
     });
