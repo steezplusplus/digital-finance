@@ -23,7 +23,7 @@
       yAxis: {
         type: 'value',
         axisLabel: {
-          formatter: (value: number) => formatCurrency(value, spend.current.currency)
+          formatter: (value: number) => formatCurrency(value, 'USD')
         }
       },
       series: [
@@ -58,5 +58,15 @@
     </select>
   </div>
 
+  <div>Current Spend: {formatCurrency(spend.current.amount, spend.current.currency)}</div>
+
+  <div>
+    Projected Spend: {formatCurrency(spend.projected.amount, spend.projected.currency)}
+    <span class="text-xs {spend.projected.trend === 'up' ? 'text-green-400' : 'text-red-400'}">
+      ({spend.projected.percentageChange > 0 ? '+' : '-'}{spend.projected.percentageChange}%)
+    </span>
+  </div>
+
   <div id="chart" style="height: 25rem"></div>
+  <!-- <pre>{JSON.stringify(spend, null, 4)}</pre> -->
 </section>

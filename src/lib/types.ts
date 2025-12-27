@@ -67,7 +67,7 @@ export interface ProjectedSpendType {
   amount: number;
   currency: string;
   percentageChange: number;
-  trend: 'up' | 'down';
+  trend: 'up' | 'down'; // TODO: never seen it be "down" but im assuming...
   comparedTo: string;
 }
 
