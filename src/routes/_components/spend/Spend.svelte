@@ -40,7 +40,7 @@
 <section class="border px-2 py-1">
   <div class="flex items-center">
     <h2 class="text-xl font-semibold">Spend Overview</h2>
-    <select class="ml-auto">
+    <select class="ml-auto border px-2 py-1">
       <option>Last 30 Days</option>
     </select>
   </div>
