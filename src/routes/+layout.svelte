@@ -6,12 +6,8 @@
 </script>
 
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>
-<nav class="px-4">
-  <a href="/">
-    <h1 class="text-4xl font-bold">Cloud Finance</h1>
-  </a>
-</nav>
 
-<main class="space-y-2 px-4">
+<main class="mx-auto max-w-7xl space-y-4 p-4 sm:px-6 lg:px-8">
+  <h1 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Digital Finance</h1>
   {@render children()}
 </main>
