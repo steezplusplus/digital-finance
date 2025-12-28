@@ -26,7 +26,7 @@
         type: 'value',
         name: 'Spend',
         axisLabel: {
-          formatter: (value: number) => formatCurrency(value, 'USD') // TODO: Should not hardcode 
+          formatter: (value: number) => formatCurrency(value, 'USD') // TODO: Should not hardcode
         }
       },
       series: [
@@ -59,7 +59,7 @@
     <!-- TODO: Period selector -->
     <label class="ml-auto">
       Period:
-      <select class="border px-2 py-1">
+      <select class="border px-2 py-1 cursor-pointer">
         <option>Last 30 Days</option>
       </select>
     </label>
