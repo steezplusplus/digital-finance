@@ -20,7 +20,7 @@
   const tableData = $derived(reservations.slice(limit * (page - 1), limit * page));
 </script>
 
-<section class="flex flex-col gap-2 border px-2 py-1">
+<section class="space-y-4 rounded-lg border border-gray-300 p-6">
   <h2 class="text-xl font-semibold">Reservations</h2>
 
   <table class="w-full">

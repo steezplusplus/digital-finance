@@ -10,7 +10,7 @@
   );
 </script>
 
-<section class="border px-2 py-1">
+<section class="space-y-4 rounded-lg border border-gray-300 p-6">
   <div class="flex items-center">
     <h2 class="text-xl font-semibold">Utilization</h2>
     <span class="ml-auto">
@@ -26,17 +26,17 @@
     <h3 class="font-semibold">{utilization.organizationName}</h3>
   </div>
 
-  <div class="flex flex-col justify-center gap-1">
-    <p>Month-to-Date Savings: {formattedSavings}</p>
+  <div class="flex flex-col justify-center gap-2">
+    <p class="text-sm">Month-to-Date Savings: <span class="text-lg font-semibold">{formattedSavings}</span></p>
 
-    <label for="percentage">Current utilization: {utilization.percentage}%</label>
+    <label for="percentage" class="text-sm">Current utilization: {utilization.percentage}%</label>
     <progress id="percentage" max="100" value={utilization.percentage}
       >{utilization.percentage}</progress
     >
 
-    <label for="target">Target utilization: {utilization.target}%</label>
+    <label for="target" class="text-sm">Target utilization: {utilization.target}%</label>
     <progress id="target" max="100" value={utilization.target}>{utilization.target}</progress>
 
-    <p>Status: {utilization.status}</p>
+    <p class="text-sm">Status: {utilization.status}</p>
   </div>
 </section>
