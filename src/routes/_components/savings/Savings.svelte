@@ -15,7 +15,7 @@
   <div class="grid gap-2 md:grid-cols-2 lg:grid-cols-3">
     <div class="flex flex-col gap-1 border px-2 py-1">
       <h3 class="font-semibold">Available Savings</h3>
-      <h4 class="font-light text-sm">{available.description}</h4>
+      <h4 class="text-sm font-light">{available.description}</h4>
       <p>
         {formatCurrency(available.amount, available.currency)} per month
       </p>
@@ -35,7 +35,7 @@
         </span>
       </div>
 
-      <h4 class="font-light text-sm">{reshaping.description}</h4>
+      <h4 class="text-sm font-light">{reshaping.description}</h4>
       <p>
         {formatCurrency(reshaping.amount, reshaping.currency)} per month
       </p>
@@ -52,7 +52,7 @@
         </span>
       </div>
 
-      <h4 class="font-light text-sm">{anomalies.description}</h4>
+      <h4 class="text-sm font-light">{anomalies.description}</h4>
       <p>{anomalies.count} Detected issues</p>
       <p>
         {anomalies.severity.high} High, {anomalies.severity.medium} Medium, {anomalies.severity.low} Low

@@ -30,6 +30,27 @@ type AnomaliesType = {
   tooltip: string;
 };
 
+type ProjectedSpendType = {
+  amount: number;
+  currency: string;
+  percentageChange: number;
+  trend: 'up' | 'down'; // TODO: never seen it be "down" but im assuming...
+  comparedTo: string; // TODO: Not sure what to do with this
+};
+
+type CurrentSpendType = {
+  amount: number;
+  currency: string;
+  period: string; // TODO: Probably meant to be used with Perdod selector
+  periodLabel: string; // TODO: Probably meant to be used with Perdod selector
+};
+
+type TimeSeriesSpendType = {
+  date: string;
+  amount: number;
+  projected: number;
+};
+
 export type SavingsType = {
   available: AvailableSavingsType;
   reshaping: ReshapingSavingsType;
@@ -61,6 +82,11 @@ export type ReservationType = {
   status: 'active' | 'inactive' | 'expired';
   utilizationPercent: number;
 };
+export interface SpendType {
+  projected: ProjectedSpendType;
+  current: CurrentSpendType;
+  timeSeries: TimeSeriesSpendType[];
+}
 
 // TODO: Finish this type
 export type CloudCostDataType = {
@@ -68,7 +94,7 @@ export type CloudCostDataType = {
   meta: Record<string, unknown>;
   period: Record<string, unknown>;
   reservations: ReservationType[];
-  spend: Record<string, unknown>;
+  spend: SpendType;
   savings: SavingsType;
   tableConfig: Record<string, unknown>;
   utilization: UtilizationType;
