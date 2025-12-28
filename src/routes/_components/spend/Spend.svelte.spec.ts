@@ -39,4 +39,28 @@ describe('Spend.svelte', () => {
     const heading = page.getByRole('heading', { level: 2, name: /Spend Overview/i });
     await expect.element(heading).toBeInTheDocument();
   });
+
+  it('should render current spend', async () => {
+    render(Spend, {
+      props: {
+        spend: mockSpend
+      }
+    });
+
+    const currentSpend = page.getByText(/Current Spend:/i);
+    await expect.element(currentSpend).toBeInTheDocument();
+  });
+
+  it('should render projected spend', async () => {
+    render(Spend, {
+      props: {
+        spend: mockSpend
+      }
+    });
+
+    const projectedSpend = page.getByText(/Projected Spend:/i);
+    await expect.element(projectedSpend).toBeInTheDocument();
+  });
+
+  it.todo('should render period selector');
 });

@@ -10,11 +10,13 @@
   onMount(() => {
     const chartContainer = document.getElementById('chart');
     const lineChart = echarts.init(chartContainer);
+
     lineChart.setOption({
-      tooltip: { trigger: 'axis' },
+      tooltip: { trigger: 'axis' }, // TODO: Currenct format in tooltip
       legend: { data: ['Actual', 'Projected'] },
       xAxis: {
         type: 'category',
+        name: 'Time',
         data: spend.timeSeries.map((d) => d.date),
         axisLabel: {
           formatter: (value: string) => formatDate(value)
@@ -22,8 +24,9 @@
       },
       yAxis: {
         type: 'value',
+        name: 'Spend',
         axisLabel: {
-          formatter: (value: number) => formatCurrency(value, 'USD')
+          formatter: (value: number) => formatCurrency(value, 'USD') // TODO: Should not hardcode 
         }
       },
       series: [
@@ -53,9 +56,13 @@
 <section class="border px-2 py-1">
   <div class="flex items-center">
     <h2 class="text-xl font-semibold">Spend Overview</h2>
-    <select class="ml-auto border px-2 py-1">
-      <option>Last 30 Days</option>
-    </select>
+    <!-- TODO: Period selector -->
+    <label class="ml-auto">
+      Period:
+      <select class="border px-2 py-1">
+        <option>Last 30 Days</option>
+      </select>
+    </label>
   </div>
 
   <div class="flex items-center gap-x-4 text-sm font-light">
