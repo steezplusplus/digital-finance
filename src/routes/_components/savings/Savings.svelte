@@ -22,9 +22,8 @@
       <p>
         {formatCurrency(available.yearlyEquivalent, available.currency)} per year
       </p>
-      <div class="mt-auto flex justify-center border">
-        <a href={available.actionUrl}>{available.actionLabel}</a>
-      </div>
+      
+      <a class="text-blue-600 hover:text-blue-800 underline" href={available.actionUrl}>{available.actionLabel}</a>
     </div>
 
     <div class="flex flex-col gap-1 border px-2 py-1">
