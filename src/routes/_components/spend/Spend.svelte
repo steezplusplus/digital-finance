@@ -59,7 +59,7 @@
     <!-- TODO: Period selector -->
     <label class="ml-auto">
       Period:
-      <select class="border px-2 py-1 cursor-pointer">
+      <select class="cursor-pointer border px-2 py-1">
         <option>Last 30 Days</option>
       </select>
     </label>
