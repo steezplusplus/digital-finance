@@ -19,5 +19,7 @@ const getCloudCostData = async (): Promise<CloudCostDataType> => {
 };
 
 export const load: PageServerLoad = async () => {
-  return await getCloudCostData();
+  return {
+    cloudCostData: getCloudCostData()
+  } ;
 };
