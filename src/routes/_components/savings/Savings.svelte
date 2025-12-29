@@ -5,6 +5,7 @@
 
   let { savings }: { savings: SavingsType } = $props();
   let { available, reshaping, anomalies } = $derived(savings);
+
   // TODO: Break down into a component for each card. Maybe make a card component.
   // TODO: Test this.
 </script>
@@ -31,9 +32,8 @@
         per year
       </p>
 
-      <a class="text-blue-600 underline hover:text-blue-800" href={available.actionUrl}
-        >{available.actionLabel}</a
-      >
+      <!-- TODO: Should be <a href={availableMemory.actionUrl}>...</a>, however this route doesn't exist yet -->
+      <span class="text-blue-600 underline hover:text-blue-800" >{available.actionLabel}</span>
     </div>
 
     <div class="space-y-4 rounded-lg border border-gray-300 p-6">
