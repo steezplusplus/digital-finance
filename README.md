@@ -10,7 +10,7 @@ SvelteKit, Tailwind, ECharts, pnpm.
 
 ### 1. Clone the repository
 
-```bash
+```sh
 git clone https://github.com/steezplusplus/digital-finance.git
 cd digital-finance
 ```
@@ -19,17 +19,16 @@ cd digital-finance
 
 Copy the example environment file to `.env` (which is git-ignored):
 
-```bash
+```sh
 cp .env.example .env
 ```
 
 Fill out `.env` following the documentation provided inside the file.
 
-### 3. Install dependencies and run locally
+### 3. Install dependencies
 
-```bash
+```sh
 pnpm install
-pnpm dev
 ```
 
 ## Developing
