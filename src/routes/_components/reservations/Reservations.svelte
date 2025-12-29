@@ -20,10 +20,10 @@
   const tableData = $derived(reservations.slice(limit * (page - 1), limit * page));
 </script>
 
-<section class="flex flex-col gap-2 border px-2 py-1">
+<section class="space-y-4 rounded-lg border border-gray-300 p-6">
   <h2 class="text-xl font-semibold">Reservations</h2>
 
-  <table class="w-full">
+  <table class="w-full table-auto">
     <thead>
       <tr>
         {#each tableHeaders as header (header.key)}
@@ -31,22 +31,22 @@
         {/each}
       </tr>
     </thead>
-    <tbody class="divide-y divide-gray-200">
+    <tbody class="divide-y divide-gray-200 space-y-4">
       {#each tableData as row (row.id)}
         <tr>
-          <td>
+          <td class="p-1">
             {row.type}
           </td>
-          <td>
+          <td class="p-1">
             {row.instance}
           </td>
-          <td>
+          <td class="p-1">
             {formatDate(row.endDate)}
           </td>
-          <td>
+          <td class="p-1">
             {formatCurrency(row.costPerHour, row.currency)}
           </td>
-          <td class={row.mtdSavings > 0 ? 'text-green-700' : 'text-red-700'}>
+          <td class="p-1 {row.mtdSavings > 0 ? 'text-green-700' : 'text-red-700'}">
             {formatCurrency(row.mtdSavings, row.currency)}
           </td>
         </tr>
@@ -54,13 +54,13 @@
     </tbody>
   </table>
   <div class="flex items-center gap-2">
-    <button class="border p-1" onclick={() => (page = page - 1)} disabled={page === 1}>
+    <button class="border rounded-lg border-gray-300 px-2 py-1 cursor-pointer disabled:cursor-not-allowed" onclick={() => (page = page - 1)} disabled={page === 1}>
       Previous
     </button>
     <span>
       Showing page {page} of {numPages}
     </span>
-    <button class="border p-1" onclick={() => (page = page + 1)} disabled={page === numPages}>
+    <button class="border rounded-lg border-gray-300 px-2 py-1 cursor-pointer disabled:cursor-not-allowed" onclick={() => (page = page + 1)} disabled={page === numPages}>
       Next
     </button>
   </div>

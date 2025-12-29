@@ -26,7 +26,7 @@
         type: 'value',
         name: 'Spend',
         axisLabel: {
-          formatter: (value: number) => formatCurrency(value, 'USD') // TODO: Should not hardcode 
+          formatter: (value: number) => formatCurrency(value, 'USD') // TODO: Should not hardcode
         }
       },
       series: [
@@ -53,24 +53,34 @@
   });
 </script>
 
-<section class="border px-2 py-1">
+<section class="space-y-4 rounded-lg border border-gray-300 p-6">
   <div class="flex items-center">
     <h2 class="text-xl font-semibold">Spend Overview</h2>
     <!-- TODO: Period selector -->
-    <label class="ml-auto">
-      Period:
-      <select class="border px-2 py-1">
+    <label class="ml-auto flex items-center gap-2 text-sm">
+      <span>Period:</span>
+      <select class="cursor-pointer rounded-lg border border-gray-300 px-2 py-1">
         <option>Last 30 Days</option>
       </select>
     </label>
   </div>
 
-  <div class="flex items-center gap-x-4 text-sm font-light">
-    <p>Current Spend: {formatCurrency(spend.current.amount, spend.current.currency)}</p>
+  <div class="flex items-center gap-x-4">
+    <p class="text-sm">
+      Current Spend
+      <span class="text-lg font-semibold">
+        {formatCurrency(spend.current.amount, spend.current.currency)}
+      </span>
+    </p>
 
-    <p>
-      Projected Spend: {formatCurrency(spend.projected.amount, spend.projected.currency)}
-      <span class={spend.projected.trend === 'up' ? 'text-green-700' : 'text-red-700'}>
+    <p class="text-sm">
+      Projected Spend:
+      <span
+        class="text-lg font-semibold {spend.projected.trend === 'up'
+          ? 'text-green-700'
+          : 'text-red-700'}"
+      >
+        {formatCurrency(spend.projected.amount, spend.projected.currency)}
         ({spend.projected.percentageChange > 0 ? '+' : '-'}{spend.projected.percentageChange}%)
       </span>
     </p>
