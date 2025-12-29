@@ -33,7 +33,7 @@
       </p>
 
       <!-- TODO: Should be <a href={availableMemory.actionUrl}>...</a>, however this route doesn't exist yet -->
-      <span class="text-blue-600 underline hover:text-blue-800" >{available.actionLabel}</span>
+      <span class="text-blue-600 underline hover:text-blue-800">{available.actionLabel}</span>
     </div>
 
     <div class="space-y-4 rounded-lg border border-gray-300 p-6">
