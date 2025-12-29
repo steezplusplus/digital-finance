@@ -9,7 +9,6 @@
   let { data }: { data: PageData } = $props();
 </script>
 
-
 {#await data.cloudCostData}
   <!-- TODO: Flesh out loading ui -->
   <p>Loading...</p>
@@ -22,4 +21,3 @@
   <!-- TODO: Flesh out fallback ui -->
   <p>Error loading cloud cost data: {error.message}</p>
 {/await}
-
