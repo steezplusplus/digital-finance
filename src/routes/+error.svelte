@@ -1,0 +1,1 @@
+<h2 class="text-lg font-semibold">An error has occurred. Try reloading.</h2>
