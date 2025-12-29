@@ -1,17 +1,35 @@
-# sv
+# Digital Finance
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+A mock finance application. 
 
-## Creating a project
+## Built with
 
-If you're seeing this, you've probably already done this step. Congrats!
+SvelteKit, Tailwind, ECharts, pnpm.
 
-```sh
-# create a new project in the current directory
-npx sv create
+## Getting Started
 
-# create a new project in my-app
-npx sv create my-app
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/steezplusplus/digital-finance.git
+cd digital-finance
+```
+
+### 2. Set up environment variables
+
+Copy the example environment file to `.env` (which is git-ignored):
+
+```bash
+cp .env.example .env
+```
+
+Fill out `.env` following the documentation provided inside the file.
+
+### 3. Install dependencies and run locally
+
+```bash
+pnpm install
+pnpm dev
 ```
 
 ## Developing
@@ -19,10 +37,14 @@ npx sv create my-app
 Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
 
 ```sh
-npm run dev
+pnpm dev
+```
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+## Testing
+
+
+```sh
+pnpm test
 ```
 
 ## Building
@@ -30,9 +52,7 @@ npm run dev -- --open
 To create a production version of your app:
 
 ```sh
-npm run build
+pnpm build
 ```
 
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+You can preview the production build with `pnpm preview`.
