@@ -7,13 +7,19 @@
   import Spend from './_components/spend/Spend.svelte';
 
   let { data }: { data: PageData } = $props();
-  const { savings, utilization, reservations, spend } = $derived(data);
 </script>
 
-<Spend {spend} />
 
-<Savings {savings} />
+{#await data.cloudCostData}
+  <!-- TODO: Flesh out loading ui -->
+  <p>Loading...</p>
+{:then cloudData}
+  <Spend spend={cloudData.spend} />
+  <Savings savings={cloudData.savings} />
+  <Utilization utilization={cloudData.utilization} />
+  <Reservations reservations={cloudData.reservations} />
+{:catch error}
+  <!-- TODO: Flesh out fallback ui -->
+  <p>Error loading cloud cost data: {error.message}</p>
+{/await}
 
-<Utilization {utilization} />
-
-<Reservations {reservations} />

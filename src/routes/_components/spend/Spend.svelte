@@ -67,7 +67,7 @@
 
   <div class="flex items-center gap-x-4">
     <p class="text-sm">
-      Current Spend
+      Current Spend:
       <span class="text-lg font-semibold">
         {formatCurrency(spend.current.amount, spend.current.currency)}
       </span>

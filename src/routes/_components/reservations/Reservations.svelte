@@ -31,7 +31,7 @@
         {/each}
       </tr>
     </thead>
-    <tbody class="divide-y divide-gray-200 space-y-4">
+    <tbody class="space-y-4 divide-y divide-gray-200">
       {#each tableData as row (row.id)}
         <tr>
           <td class="p-1">
@@ -54,13 +54,21 @@
     </tbody>
   </table>
   <div class="flex items-center gap-2">
-    <button class="border rounded-lg border-gray-300 px-2 py-1 cursor-pointer disabled:cursor-not-allowed" onclick={() => (page = page - 1)} disabled={page === 1}>
+    <button
+      class="cursor-pointer rounded-lg border border-gray-300 px-2 py-1 disabled:cursor-not-allowed"
+      onclick={() => (page = page - 1)}
+      disabled={page === 1}
+    >
       Previous
     </button>
     <span>
       Showing page {page} of {numPages}
     </span>
-    <button class="border rounded-lg border-gray-300 px-2 py-1 cursor-pointer disabled:cursor-not-allowed" onclick={() => (page = page + 1)} disabled={page === numPages}>
+    <button
+      class="cursor-pointer rounded-lg border border-gray-300 px-2 py-1 disabled:cursor-not-allowed"
+      onclick={() => (page = page + 1)}
+      disabled={page === numPages}
+    >
       Next
     </button>
   </div>

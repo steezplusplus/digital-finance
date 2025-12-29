@@ -5,6 +5,7 @@
 
   let { savings }: { savings: SavingsType } = $props();
   let { available, reshaping, anomalies } = $derived(savings);
+
   // TODO: Break down into a component for each card. Maybe make a card component.
   // TODO: Test this.
 </script>
@@ -31,9 +32,8 @@
         per year
       </p>
 
-      <a class="text-blue-600 underline hover:text-blue-800" href={available.actionUrl}
-        >{available.actionLabel}</a
-      >
+      <!-- TODO: Should be <a href={availableMemory.actionUrl}>...</a>, however this route doesn't exist yet -->
+      <span class="text-blue-600 underline hover:text-blue-800">{available.actionLabel}</span>
     </div>
 
     <div class="space-y-4 rounded-lg border border-gray-300 p-6">
@@ -47,7 +47,9 @@
       <h4 class="text-sm font-light">{reshaping.description}</h4>
 
       <p class="text-sm">
-        <span class="text-lg font-semibold">{formatCurrency(reshaping.amount, reshaping.currency)}</span>
+        <span class="text-lg font-semibold"
+          >{formatCurrency(reshaping.amount, reshaping.currency)}</span
+        >
         per month
       </p>
 
@@ -82,8 +84,8 @@
       </p>
 
       <p class="text-sm font-light">
-        <span class="text-red-500">{anomalies.severity.high} High</span>, 
-        <span class="text-orange-500">{anomalies.severity.medium} Medium</span>, 
+        <span class="text-red-500">{anomalies.severity.high} High</span>,
+        <span class="text-orange-500">{anomalies.severity.medium} Medium</span>,
         <span class="text-yellow-500">{anomalies.severity.low} Low</span>
       </p>
     </div>
