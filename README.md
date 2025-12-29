@@ -1,6 +1,6 @@
 # Digital Finance
 
-A mock finance application. 
+A mock finance application.
 
 ## Built with
 
@@ -41,7 +41,6 @@ pnpm dev
 ```
 
 ## Testing
-
 
 ```sh
 pnpm test

@@ -47,7 +47,9 @@
       <h4 class="text-sm font-light">{reshaping.description}</h4>
 
       <p class="text-sm">
-        <span class="text-lg font-semibold">{formatCurrency(reshaping.amount, reshaping.currency)}</span>
+        <span class="text-lg font-semibold"
+          >{formatCurrency(reshaping.amount, reshaping.currency)}</span
+        >
         per month
       </p>
 
@@ -82,8 +84,8 @@
       </p>
 
       <p class="text-sm font-light">
-        <span class="text-red-500">{anomalies.severity.high} High</span>, 
-        <span class="text-orange-500">{anomalies.severity.medium} Medium</span>, 
+        <span class="text-red-500">{anomalies.severity.high} High</span>,
+        <span class="text-orange-500">{anomalies.severity.medium} Medium</span>,
         <span class="text-yellow-500">{anomalies.severity.low} Low</span>
       </p>
     </div>

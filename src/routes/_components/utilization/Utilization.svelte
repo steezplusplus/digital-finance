@@ -27,7 +27,9 @@
   </div>
 
   <div class="flex flex-col justify-center gap-2">
-    <p class="text-sm">Month-to-Date Savings: <span class="text-lg font-semibold">{formattedSavings}</span></p>
+    <p class="text-sm">
+      Month-to-Date Savings: <span class="text-lg font-semibold">{formattedSavings}</span>
+    </p>
 
     <label for="percentage" class="text-sm">Current utilization: {utilization.percentage}%</label>
     <progress id="percentage" max="100" value={utilization.percentage}
