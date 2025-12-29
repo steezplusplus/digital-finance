@@ -1,7 +1,7 @@
 <script>
   let { description } = $props();
   let isVisible = $state(false);
-  // TODO: Tooltip can appear off screen.
+  // TODO: Rebuild this with the Popover API - https://developer.mozilla.org/en-US/docs/Web/API/Popover_API/Using
 </script>
 
 <div class="relative inline-block">
